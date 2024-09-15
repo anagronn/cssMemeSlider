@@ -10,10 +10,11 @@ body {
 .slider-container {
   overflow: hidden;
   max-width: 1400px;
+  max-height: 970px;
   width: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
@@ -28,70 +29,88 @@ input {
   height: 100%;
 }
 
-p{
-  font-family:'Consolas';
-  padding: 10px;
+.caption{
+  width: 100%;
+  font-family: 'Consolas';
   color: white;
-  margin: 0;
+  margin: 10px;
   font-size: 1.5rem;
 }
 
 .slides {
   width: 700%;
   max-height: 850px;
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   transition: transform 1s ease-in-out;
   align-self: flex-start;
 }
 
-img{
+.captions{
+  width: 700%;
+  display: flex;
+  padding-left: 20px;
+  align-self: flex-start;
+  justify-content: space-between;
+  margin-top: 30px;
+  transition: transform 0.2s ease-in-out;
+}
+
+img {
   max-height: 800px;
 }
 
-.controls{
+.controls {
+  margin: 40px;
+  margin-top: -40px;
+  align-self: flex-end;
   display: flex;
-  gap: 10px;
-  margin: 50px;
 }
 
-.control {
-  width: 30px;
+.control > div{
+  width: 20px;
   height: 15px;
   background-color: #bbb;
   border-radius: 100px;
-  cursor: pointer;
   transition: background-color 0.5s ease-in-out;
 }
 
-.control:hover {
+.control{
+  position: static;
+  z-index: 1;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.control:hover > div{
   background-color: #333;
 }
 
-#s1:checked ~ .slides {
+#s1:checked~.slides, #s1:checked ~ .captions {
   transform: translateX(0%);
 }
 
-#s2:checked ~ .slides {
+#s2:checked~.slides, #s2:checked ~ .captions {
   transform: translateX(calc(-100% / 7));
 }
 
-#s3:checked ~ .slides {
+#s3:checked~.slides, #s3:checked ~ .captions {
   transform: translateX(calc(-200% / 7));
 }
 
-#s4:checked ~ .slides {
+#s4:checked~.slides, #s4:checked ~ .captions {
   transform: translateX(calc(-300% / 7));
 }
 
-#s5:checked ~ .slides {
+#s5:checked~.slides, #s5:checked ~ .captions {
   transform: translateX(calc(-400% / 7));
 }
 
-#s6:checked ~ .slides {
+#s6:checked~.slides, #s6:checked ~ .captions {
   transform: translateX(calc(-500% / 7));
 }
 
-#s7:checked ~ .slides {
+#s7:checked~.slides, #s7:checked ~ .captions {
   transform: translateX(calc(-600% / 7));
 }
+
