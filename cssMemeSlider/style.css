@@ -115,6 +115,16 @@ img {
   transform: translateX(calc(-600% / 7));
 }
 
+#s1:checked ~ .controls label[for="s1"] > div,
+#s2:checked ~ .controls label[for="s2"] > div,
+#s3:checked ~ .controls label[for="s3"] > div,
+#s4:checked ~ .controls label[for="s4"] > div,
+#s5:checked ~ .controls label[for="s5"] > div,
+#s6:checked ~ .controls label[for="s6"] > div,
+#s7:checked ~ .controls label[for="s7"] > div {
+  background-color: #333;
+}
+
 @media screen and (max-width: 1130px){
   .caption{
     font-size: 1.2rem;
