@@ -1,0 +1,185 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+}
+
+.slider-container {
+  margin: 6.25rem;
+  overflow: hidden;
+  max-width: 87.5rem;
+  max-height: 56rem;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 1.25rem;
+  box-shadow: 0 0.7rem 1.5rem rgba(0, 0, 0, 0.5);
+
+}
+
+input {
+  display: none;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+}
+
+.caption {
+  width: 100%;
+  font-family: 'Consolas';
+  color: white;
+  margin: 0.7rem;
+  font-size: 1.5rem;
+}
+
+.slides {
+  width: 700%;
+  max-height: 53.125rem;
+  display: flex;
+  align-items: center;
+  transition: transform 1s ease-in-out;
+  align-self: flex-start;
+}
+
+.captions {
+  width: 700%;
+  display: flex;
+  padding-left: 1.25rem;
+  align-self: flex-start;
+  justify-content: space-between;
+  margin-top: 1.875rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+img {
+  max-height: 50rem;
+}
+
+.controls {
+  margin: 2.5rem;
+  margin-top: -2.5rem;
+  align-self: flex-end;
+  display: flex;
+}
+
+.control>div {
+  width: 1.25rem;
+  height: 1rem;
+  background-color: #bbb;
+  border-radius: 30%;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.control {
+  position: static;
+  z-index: 1;
+  padding: 0.625rem;
+  cursor: pointer;
+}
+
+.control:hover>div {
+  background-color: #333;
+}
+
+.control:active>div {
+  background-color: #002856;
+}
+
+#s1:checked~.slides,
+#s1:checked~.captions {
+  transform: translateX(0%);
+}
+
+#s2:checked~.slides,
+#s2:checked~.captions {
+  transform: translateX(calc(-100% / 7));
+}
+
+#s3:checked~.slides,
+#s3:checked~.captions {
+  transform: translateX(calc(-200% / 7));
+}
+
+#s4:checked~.slides,
+#s4:checked~.captions {
+  transform: translateX(calc(-300% / 7));
+}
+
+#s5:checked~.slides,
+#s5:checked~.captions {
+  transform: translateX(calc(-400% / 7));
+}
+
+#s6:checked~.slides,
+#s6:checked~.captions {
+  transform: translateX(calc(-500% / 7));
+}
+
+#s7:checked~.slides,
+#s7:checked~.captions {
+  transform: translateX(calc(-600% / 7));
+}
+
+#s1:checked~.controls label[for="s1"]>div,
+#s2:checked~.controls label[for="s2"]>div,
+#s3:checked~.controls label[for="s3"]>div,
+#s4:checked~.controls label[for="s4"]>div,
+#s5:checked~.controls label[for="s5"]>div,
+#s6:checked~.controls label[for="s6"]>div,
+#s7:checked~.controls label[for="s7"]>div {
+  background-color: #4f4545;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 1130px) {
+  .caption {
+    font-size: 1.2rem;
+  }
+
+  .slider-container {
+    padding: 1.25rem 0;
+  }
+}
+
+
+@media screen and (max-width: 990px) {
+  .controls {
+    margin: 1.25rem;
+    align-self: center;
+  }
+
+  .caption {
+    margin: 1.25rem;
+    text-align: center;
+  }
+
+  .captions {
+    order: 3;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+@media screen and (max-width: 499px) {
+  .control>div {
+    width: 1rem;
+    height: 0.8rem;
+  }
+
+  .control {
+    padding: 0.4rem;
+  }
+
+  body {
+    min-width: 27rem;
+  }
+}
