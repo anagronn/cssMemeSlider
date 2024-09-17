@@ -32,7 +32,7 @@ input {
   height: 100%;
 }
 
-.caption{
+.caption {
   width: 100%;
   font-family: 'Consolas';
   color: white;
@@ -49,7 +49,7 @@ input {
   align-self: flex-start;
 }
 
-.captions{
+.captions {
   width: 700%;
   display: flex;
   padding-left: 1.25rem;
@@ -70,84 +70,98 @@ img {
   display: flex;
 }
 
-.control > div{
+.control>div {
   width: 1.25rem;
   height: 1rem;
   background-color: #bbb;
-  border-radius: 1.25rem;
+  border-radius: 30%;
   transition: background-color 0.5s ease-in-out;
 }
 
-.control{
+.control {
   position: static;
   z-index: 1;
   padding: 0.625rem;
   cursor: pointer;
 }
 
-.control:hover > div{
+.control:hover>div {
   background-color: #333;
 }
 
-#s1:checked~.slides, #s1:checked ~ .captions {
+.control:active>div {
+  background-color: #002856;
+}
+
+#s1:checked~.slides,
+#s1:checked~.captions {
   transform: translateX(0%);
 }
 
-#s2:checked~.slides, #s2:checked ~ .captions {
+#s2:checked~.slides,
+#s2:checked~.captions {
   transform: translateX(calc(-100% / 7));
 }
 
-#s3:checked~.slides, #s3:checked ~ .captions {
+#s3:checked~.slides,
+#s3:checked~.captions {
   transform: translateX(calc(-200% / 7));
 }
 
-#s4:checked~.slides, #s4:checked ~ .captions {
+#s4:checked~.slides,
+#s4:checked~.captions {
   transform: translateX(calc(-300% / 7));
 }
 
-#s5:checked~.slides, #s5:checked ~ .captions {
+#s5:checked~.slides,
+#s5:checked~.captions {
   transform: translateX(calc(-400% / 7));
 }
 
-#s6:checked~.slides, #s6:checked ~ .captions {
+#s6:checked~.slides,
+#s6:checked~.captions {
   transform: translateX(calc(-500% / 7));
 }
 
-#s7:checked~.slides, #s7:checked ~ .captions {
+#s7:checked~.slides,
+#s7:checked~.captions {
   transform: translateX(calc(-600% / 7));
 }
 
-#s1:checked ~ .controls label[for="s1"] > div,
-#s2:checked ~ .controls label[for="s2"] > div,
-#s3:checked ~ .controls label[for="s3"] > div,
-#s4:checked ~ .controls label[for="s4"] > div,
-#s5:checked ~ .controls label[for="s5"] > div,
-#s6:checked ~ .controls label[for="s6"] > div,
-#s7:checked ~ .controls label[for="s7"] > div {
-  background-color: #333;
+#s1:checked~.controls label[for="s1"]>div,
+#s2:checked~.controls label[for="s2"]>div,
+#s3:checked~.controls label[for="s3"]>div,
+#s4:checked~.controls label[for="s4"]>div,
+#s5:checked~.controls label[for="s5"]>div,
+#s6:checked~.controls label[for="s6"]>div,
+#s7:checked~.controls label[for="s7"]>div {
+  background-color: #4f4545;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
-@media screen and (max-width: 1130px){
-  .caption{
+@media screen and (max-width: 1130px) {
+  .caption {
     font-size: 1.2rem;
   }
 
-  .slider-container{
+  .slider-container {
     padding: 1.25rem 0;
   }
 }
 
 
 @media screen and (max-width: 990px) {
-  .controls{
+  .controls {
     margin: 1.25rem;
     align-self: center;
   }
-  .caption{
+
+  .caption {
     margin: 1.25rem;
     text-align: center;
   }
-  .captions{
+
+  .captions {
     order: 3;
     margin: 0;
     padding: 0;
@@ -156,12 +170,16 @@ img {
 
 
 @media screen and (max-width: 499px) {
-  .control > div{
+  .control>div {
     width: 1rem;
     height: 0.8rem;
   }
 
-  .control{
+  .control {
     padding: 0.4rem;
+  }
+
+  body {
+    min-width: 27rem;
   }
 }
